@@ -13,8 +13,10 @@
         <h1>An interactive web page</h1>
 
         <h2>1. Color changer</h2>
-        <button id="gray_button">Gray</button>
-        <button id="blue_button">Blue</button>
+        <div id="buttons">
+            <button id="gray_button">Gray</button>
+            <button id="blue_button">Blue</button>
+        </div>
         <div id="color_box" class="gray"></div>        
         <script>
             const color_box = document.getElementById("color_box");
@@ -34,6 +36,18 @@
              *  Adicionar um botão e um event handler 
              *  e o botão torna o quadrado rosa.
              */
+            
+            const divpai= document.getElementById('buttons');
+            const button = document.createElement('button');
+            button.id = "pink_button";
+            button.innerText = "Pink";
+            divpai.appendChild(button);
+
+            const pink_button = document.getElementById("pink_button");
+            pink_button.onclick = function () {
+                color_box.className = "pink";
+            };
+
         </script>
 
         <hr>
@@ -53,6 +67,8 @@
                  *  atualiza o conteúdo de texto do "countspan" 
                  *  e mostra o valor atual de "count".
                  */
+                count++;
+                countspan.innerText = count;
             }
         </script>
 
@@ -68,6 +84,15 @@
                  * A função mostra um "alert dialog" mostrando se o contador 
                  * (da segunda tarefa (TODO 2)) é par ou impar.
                  */
+                if (count%2 === 0){
+                    const alert = "Even";
+                    window.alert(alert);
+                }
+                else{
+                    const alert= "Odd";
+                    window.alert(alert);
+                }
+                window.location.reload();
             }
         </script>
     </body>
